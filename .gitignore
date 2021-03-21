@@ -1,2 +1,5 @@
 node_modules/
-toilet-paper-calculator.code-workspace
+
+dist/
+
+Personal-Blog.fig
