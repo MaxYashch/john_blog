@@ -18,10 +18,6 @@ body {
     overflow: hidden;
 }
 
-@import "blocks/header";
-@import "blocks/sidebar";
-@import "blocks/main";
-
 .container {
     margin: 0 auto;
     padding: 0 5rem;
@@ -59,3 +55,8 @@ body {
 .btn--blue:hover {
     background-color: darken($blue, 5%);
 }
+
+@import "blocks/header";
+@import "blocks/sidebar";
+@import "blocks/main";
+@import "blocks/stories";

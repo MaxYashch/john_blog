@@ -1,8 +1,125 @@
 .header {
+    display: flex;
     width: calc(100% - #{$sidebar-width});
-    height: 30px;
     position: fixed;
     top: 0;
     right: 0;
     z-index: $z-index-header;
+    background-color: #0d0d0d;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, .25);
+}
+
+
+.header__left {
+    width: 60%;
+ }
+
+
+// navigation
+.nav { 
+    display: flex;
+}
+.nav__list {
+    display: flex;
+}
+.nav__item {
+    position: relative;
+
+    transition: background-color .2s linear;
+    &:hover {
+        .nav__link {
+            background-color: $blue;
+        }
+
+        > .nav__subnav {
+            display: block;
+        }
+    }
+}
+.nav__link {
+    display: block;
+    padding: 1.35rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $white;
+
+    transition: background-color .2s linear;
+    &:hover {
+        background-color: $blue;
+    }
+}
+
+
+.header__right {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+}
+
+.search {
+    background-color: $primary;
+    max-width: 21rem;
+    width: 100%;
+}
+
+.search__input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    color: $white;
+
+    &::placeholder {
+        color: rgba($white, 0.4);
+    }
+}
+
+.nav__link--subnav {
+    position: relative;
+    padding-right: 3.5rem;
+    &:after{
+        content: '';
+        display: block;
+        margin-top: 2px;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: $white transparent transparent transparent;
+
+        position: absolute;
+        top: 50%;
+        right: 1.35rem;
+        transform: translateY(-50%);
+    }
+}
+
+.nav__subnav {
+    display: none;
+    width: 16.5rem;
+    background-color: $blue;
+    color: $white;
+    border-radius: 0 0 5px 5px;
+    padding: 0.5rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 6px 6px rgba(#000, 0.25);
+    // transition: background-color .2s linear;
+    // &:hover {
+    //     background-color: darnen($blue, 5%);
+    // }
+}
+
+.nav__subnav-link {
+    display: block;
+    color: $white;
+    font-size: 1.2rem;
+    padding: 0.45rem 1.2rem;
+
+    transition: background-color .2s linear;
+    &:hover {
+        background-color: darken($blue, 10%);
+    }
 }
